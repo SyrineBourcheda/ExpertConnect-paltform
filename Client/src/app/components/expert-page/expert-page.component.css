@@ -1,0 +1,486 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap");
+.bodyExpert {
+  background-color: #efefefe2;
+  padding-bottom: 8%;
+  padding-top: 2%;
+  
+ 
+}
+.profile {
+  box-shadow: 0 4px 8px rgba(230, 228, 228, 0.245);
+  margin-top: 2%;
+  background-color: #ffffffc1;
+  width: 95%;
+  margin-left: 30px;
+}
+.info {
+  margin-left: 35px;
+ 
+  font-family: Raleway;
+  font-weight: bold;
+}
+.nav-item a {
+  font-size: 15px !important ;
+
+}
+.nav-item a span {
+  border: 2px solid #3a6884; /* Bordure */
+  background-color: #3a6884;
+  opacity: 0.7; /* Arrière-plan transparent */
+  color: #fff; /* Couleur du texte */
+  padding: 6px 12px; /* Espacement intérieur du bouton */
+  border-radius: 4px; /* Coins arrondis */
+  transition: background-color 0.3s, color 0.3s; /* Transition de style */
+}
+
+.navbarExpert {
+  height: 60px;
+  background-color: #fff !important;
+  margin-top: 0px;
+  max-width: 1460px; /* Ajoutez cette ligne pour définir une largeur maximale */
+ margin-left: 25px; 
+ margin-bottom: 35px;/* Utilisez auto pour centrer horizontalement */
+  padding: 0 10px; /* Ajoutez un espacement horizontal */
+  box-shadow: rgba(181, 180, 180, 0.35) 0px 5px 15px;
+}
+
+.navbarExpert.fixed-top {
+  transition: all 0.3s; /* Add a smooth transition effect */
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.8
+  ); /* Set the background color of the fixed navbar */
+  backdrop-filter: blur(
+    10px
+  ); /* Add a blur effect to the navbar background (for modern browsers) */
+  -webkit-backdrop-filter: blur(
+    10px
+  ); /* Add a blur effect to the navbar background (for Safari) */
+  position: fixed;
+  top: 10;
+  left: 0;
+  right: 0;
+  z-index: 1030; /* Set a higher z-index to ensure the navbar is above other content */
+}
+.avatar {
+  height: 40px;
+  width: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid transparent;
+  position: relative;
+  border-radius: 100px;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 20px;
+}
+.stat {
+    display: flex;
+    position: absolute;
+    right: -2px;
+    bottom: -2px;
+    display: block;
+    width: 12px;
+    height: 12px;
+    z-index: 9;
+    border: 2px solid #ffffff;
+    border-radius: 100px;
+    &.green {
+      background: #00ba34;
+    }
+    &.grey {
+      background: #969696;
+    }
+  }
+
+.navbar-text {
+  align-items: center;
+}
+.navbar-brand {
+  color: #3a6884;
+}
+.nameBar{
+  text-decoration: none;
+  margin-top: 15px; margin-right: 15px;
+  color: #000;
+}
+
+.edit {
+  background: #797e87;
+  border: 0;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+  font-size: 20px;
+  height: 40px;
+  line-height: 40px;
+  outline: none;
+  padding: 0;
+  padding-right: 10px;
+  position: relative;
+  -webkit-transition: background 0.4s;
+  transition: background 0.4s;
+  margin-top: 20px;
+}
+.edit:hover {
+  background: #758493;
+}
+.edit span {
+  display: inline-block;
+  float: left;
+}
+.edit .edit-icon {
+  height: 40px;
+  position: relative;
+  width: 40px;
+}
+.ligne {
+  width: 200px;
+}
+/* General styles */
+/* General styles */
+.profile {
+  max-width: 100%;
+  overflow-x: auto;
+  font-size: medium;
+  font-family: Raleway;
+}
+
+.profile-container {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+}
+
+.logo img {
+  max-width: 100%;
+  height: auto;
+}
+
+.info {
+  flex-grow: 1;
+}
+
+/* Styles for the contact divs */
+.contact-wrapper {
+  display: flex;
+  margin-right: 150px;
+
+  
+}
+
+.contact {
+  margin-right: 90px;
+   /* Adjust the spacing between the contact divs */
+}
+.contact a {
+  text-decoration: none;
+  color: inherit;
+}
+.contact:last-child {
+  margin-right: 0; /* Remove margin for the last contact div */
+}
+
+.contact div {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.contact i {
+  margin-right: 5px;
+}
+
+.edit {
+  margin-left: auto;
+}
+.font h6{
+  font-weight: bold;
+}
+
+/* Media queries */
+@media only screen and (max-width: 768px) {
+  .profile-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .contact div:last-child {
+    margin-bottom: 0;
+  }
+
+  .edit {
+    margin: 20px 0;
+    
+  }
+}
+.editB{
+  margin-right: 100px;
+}
+@media only screen and (max-width: 1240px) {
+  .editB{
+    margin-right: 30px;
+  }
+  .contact-wrapper {
+    display: flex;
+    padding-right: 30px;
+  
+    
+  }
+  
+}
+@media only screen and (max-width: 950px) {
+  .edit {
+    /* You can adjust the values below to decrease the button size */
+    width: 40px;
+    height: 40px;
+   
+  }
+  .pro{
+    margin-top: 50px;
+  }
+  
+  /* If you want to reduce the icon size */
+
+  
+}
+
+.edit-icon:before {
+  border: 3px solid #fff;
+  border-radius: 3px;
+  content: "";
+  display: inline-block;
+  height: 50%;
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  width: 50%;
+  transform: translate(-50%, -50%);
+}
+.edit-icon:after {
+  background: #758493;
+  border: 2px #fff solid;
+  border-bottom-left-radius: 5px 15px;
+  border-bottom-right-radius: 5px 15px;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+  box-shadow: 0 0 0 2px #758493;
+  content: "";
+  display: inline-block;
+  height: 55%;
+  position: absolute;
+  top: 7%;
+  left: 45%;
+  width: 6px;
+  transform: translate(0, 0) rotate(45deg);
+  transform-origin: 50% 75%;
+  transition: background 0.4s, box-shadow 0.4s;
+}
+.edit:hover span:after {
+  background: #758493;
+  box-shadow: 0 0 0 2px #758493;
+  animation: wiggle 0.25s 3 linear;
+}
+
+@keyframes wiggle {
+  0% {
+    transform: translate(0, 0) rotate(45deg);
+  }
+  25% {
+    transform: translate(0, 0) rotate(25deg);
+  }
+  50% {
+    transform: translate(0, 0) rotate(45deg);
+  }
+  75% {
+    transform: translate(0, 0) rotate(65deg);
+  }
+  100% {
+    transform: translate(0, 0) rotate(45deg);
+  }
+}
+
+.session {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40vh;
+  width: 95%;
+  background-color: rgb(255, 255, 255) !important;
+}
+
+.content {
+  text-align: center;
+  font-size: 100%;
+  font-family: Raleway;
+}
+
+.btn {
+  /* Your button styles here */
+  padding: 5px 8px;
+  font-size: 16px;
+  background-color: #758493;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  animation: enlargeButton 2s infinite alternate;
+  margin-top: 20px; /* Apply the animation to the button */
+}
+
+/* Define the animation */
+@keyframes enlargeButton {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.2); /* Enlarge the button by 10% */
+  }
+}
+.avatar {
+  width: 40px; /* Set the desired width of the avatar */
+  height: 40px; /* Set the desired height of the avatar */
+  border-radius: 50%;
+  margin-right: 10px; /* Create a circular avatar */
+}
+.name {
+  margin-right: 20px; /* Create a circular avatar */
+}
+i {
+  opacity: 0.8;
+}
+.font {
+  text-decoration: none;
+  color: rgb(0, 0, 0);
+  font-size: 12px;
+}
+.Name {
+  text-decoration: none;
+  color: rgb(0, 0, 0);
+  font-size: 18px;
+}
+.bio {
+  margin: 0px;
+  color: rgb(0, 0, 0);
+  font-size: 90%;
+  line-height: 22px;
+}
+/* Your previous CSS code... */
+/* General styles */
+.profile {
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+.profile-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.profile-table td {
+  padding: 10px;
+  vertical-align: middle;
+  font-size: medium;
+  font-family: Raleway;
+  text-align: center;
+}
+
+.logo img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Media queries */
+@media only screen and (max-width: 768px) {
+  .profile-table td {
+    display: block;
+    text-align: left;
+  }
+
+  .profile-table td:last-child {
+    display: none;
+  }
+
+  .ligne {
+    display: none;
+  }
+}
+
+/* Media queries for responsive layout */
+@media (max-width: 697px) {
+  /* Adjust the styles for screens with a maximum width of 768px or smaller */
+  .session {
+    width: 90%;
+  }
+  .profile {
+    width: 90%;
+  }
+  .content p {
+    font-size: 60%;
+  }
+  .ligne {
+    width: 10px;
+  }
+  
+}
+
+@media (max-width: 882px) {
+  .contact-wrapper {
+    display: flex;
+    margin-right: 0px;
+  
+    
+  }
+  .font {
+    font-size: 10px;
+  }
+  .font h6{
+    font-size: 10px;
+    ;
+    
+  }
+  .Name{
+    font-size: 10px;
+  }
+  .bio{
+    font-size: 10px;
+  }
+ 
+}
+@media (max-width: 1240px) {
+  .contact-wrapper {
+    display: flex;
+    margin-right: 0px;
+  
+    
+  }
+ 
+ 
+}
+@media (max-width: 769px) {
+  .info {
+  margin-right: 50px;
+margin-top: 20px; }
+
+  .font {
+    font-size: 10px;
+  }
+  .font h6{
+    font-size: 10px;
+    margin-top: 25px;
+    
+  }
+  .contact-wrapper {
+    display: flex;
+    margin-right: 0px;
+  
+    
+  }
+}
+.error-message{
+  color: red;
+
+}
+/* ... Remaining CSS code ... */

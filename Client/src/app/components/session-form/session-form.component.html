@@ -1,0 +1,204 @@
+<!-- Multi step form -->
+<section class="multi_step_form">
+  <form id="msform">
+    <!-- Tittle -->
+    <div class="tittle">
+      <h2>Session Publishing Process</h2>
+      <p>
+        Please ensure you finish all the steps of the process before proceeding
+        to publish your session
+      </p>
+    </div>
+    <!-- progressbar -->
+    <ul id="progressbar">
+      <li class="active">Image Upload</li>
+      <li class="active">Session Details</li>
+      <li>Date & Duration</li>
+    </ul>
+    <!-- fieldsets -->
+    <fieldset>
+      <h3>Upload Image</h3>
+      <h6>
+        Please upload your logo image in one of the following supported formats:
+        JPEG, PNG, GIF
+      </h6>
+
+      <div class="input-group">
+        <div class="custom-file">
+          <input
+            type="file"
+            class="custom-file-input"
+            id="upload"
+            (change)="onFileSelected($event)"
+          />
+          <label class="custom-file-label" for="upload" id="fileLabel"
+            ><i class="ion-android-cloud-outline"></i>Choose file</label
+          >
+        </div>
+        <img
+          [src]="session.imagePath"
+          alt="Selected Image"
+          id="selectedImage"
+          *ngIf="session.imagePath"
+          class="custom-image"
+        />
+      </div>
+
+      <button
+        type="button"
+        class="action-button previous_button"
+        routerLink="/expertPage"
+      >
+        Back
+      </button>
+
+      <button
+        type="button"
+        class="next action-button"
+        (click)="next()"
+        [disabled]="!session.imagePath"
+        [ngClass]="{ 'disabled-button': !session.imagePath }"
+      >
+        Continue
+      </button>
+    </fieldset>
+    <fieldset>
+      <h3>Session info</h3>
+      <h6>
+        Please fill in the form with the title, description, and requirements of
+        your session
+      </h6>
+      <div class="form-floating mb-3">
+        <input
+          type="text"
+          class="form-control"
+          id="floatingInput"
+          placeholder="."
+          [(ngModel)]="session.title"
+          name="title"
+        />
+        <label for="floatingInput" style="color: #137b92; font-family: cursive"
+          >Title:<span style="color: red">*</span></label
+        >
+      </div>
+
+      <div class="row g-3">
+        <div class="col">
+          <label
+            for="Objectives"
+            class="objectives"
+            style="color: #137b92; font-family: cursive; margin-right: 70%"
+            >Objectives:<span style="color: red">*</span></label
+          >
+
+          <textarea
+            class="form-control"
+            placeholder="Please enter the specific goals and outcomes you aim to achieve during the session"
+            aria-label="Objectives"
+            ng-model="Objectives"
+            [(ngModel)]="session.objectives"
+            name="objectives"
+          ></textarea>
+        </div>
+        <div class="col">
+          <label
+            for="Requirements"
+            class="Requirements"
+            style="color: #137b92; font-family: cursive; margin-right: 70%"
+            >Requirements<span style="color: red">*</span></label
+          >
+
+          <textarea
+            class="form-control"
+            placeholder=" Please enter detailed information about the prerequisites, specifications, or any specific needs you have for the session"
+            aria-label="Requirements"
+            [(ngModel)]="session.requirements"
+            name="requirements"
+          ></textarea>
+        </div>
+      </div>
+      <button
+        type="button"
+        class="action-button previous previous_button"
+        (click)="previous()"
+      >
+        Back
+      </button>
+      <button
+        type="button"
+        class="next action-button"
+        (click)="next()"
+        [disabled]="!isValidForm()"
+        [ngClass]="{ 'disabled-button': !isValidForm() }"
+      >
+        Continue
+      </button>
+    </fieldset>
+    <fieldset>
+      <h3>Specify Session Duration</h3>
+      <h6>Please indicate the preferred date and duration for your session</h6>
+      <div class="row g-3">
+        <div class="mb-3 col">
+          <label
+            for="sessionDate"
+            class="sessionDate"
+            style="color: #137b92; font-family: cursive"
+            ><i class="bi bi-calendar-check"></i> Session Date<span
+              style="color: red"
+              >*</span
+            ></label
+          >
+          <input
+            type="date"
+            class="form-control"
+            id="sessionDate"
+            required
+            [(ngModel)]="session.date"
+            name="durat"
+          />
+        </div>
+
+        <div class="mb-3 col fieldDuration">
+          <label
+            for="sessionDuration"
+            class="sessionDuration"
+            style="color: #137b92; font-family: cursive"
+            ><i class="bi bi-clock"></i> Session Duration<span
+              style="color: red"
+              >*</span
+            ></label
+          >
+          <input
+            type="number"
+            class="form-control"
+            id="sessionDuration"
+            min="1"
+            max="240"
+            required
+            [(ngModel)]="session.duration"
+            name="duration"
+          />
+          <small style="color: #cb4335"
+            >Duration in minutes (max 240 minutes).</small
+          >
+        </div>
+      </div>
+      <button
+        type="button"
+        class="action-button previous previous_button"
+        (click)="previous()"
+      >
+        Back
+      </button>
+      <button
+        class="action-button"
+        (click)="finish()"
+        [ngClass]="{ 'disabled-button': !isValidFormDate() }"
+        [disabled]="!isValidFormDate()"
+      >
+        Finish
+      </button>
+    </fieldset>
+  </form>
+</section>
+<!-- End Multi step form -->

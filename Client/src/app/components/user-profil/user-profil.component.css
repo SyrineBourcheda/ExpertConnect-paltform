@@ -1,0 +1,304 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap");
+.body {
+  background-color: #efefefe2;
+  padding-top: 7%;
+  padding-bottom: 9%;
+  /* Set the desired background color */
+}
+.profile {
+  box-shadow: 0 4px 8px rgba(230, 228, 228, 0.245);
+
+  background-color: #ffffffc1;
+  width: 95%;
+  margin-left:30px;
+}
+.info {
+  margin-left: 35px;
+  opacity: 0.8;
+  font-family: Raleway;
+  font-weight: bold;
+}
+.firstNavbar {
+  height: 60px;
+  background-color: #f1f0f0be !important;
+}
+.fixed-top {
+  transition: all 0.3s; /* Add a smooth transition effect */
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.8
+  ); /* Set the background color of the fixed navbar */
+  backdrop-filter: blur(
+    10px
+  ); /* Add a blur effect to the navbar background (for modern browsers) */
+  -webkit-backdrop-filter: blur(
+    10px
+  ); /* Add a blur effect to the navbar background (for Safari) */
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1030; /* Set a higher z-index to ensure the navbar is above other content */
+}
+.navbar-text {
+  align-items: center;
+}
+.avatar {
+  height: 40px;
+  width: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid transparent;
+  position: relative;
+  border-radius: 100px;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 20px;
+}
+.stat {
+    display: flex;
+    position: absolute;
+    right: -2px;
+    bottom: -2px;
+    display: block;
+    width: 12px;
+    height: 12px;
+    z-index: 9;
+    border: 2px solid #ffffff;
+    border-radius: 100px;
+    &.green {
+      background: #00ba34;
+    }
+    &.grey {
+      background: #969696;
+    }
+  }
+
+.profile {
+  margin-right: 20px; /* Create a circular avatar */
+}
+.secondNavbar {
+  height: 60px;
+  background-color: #fff !important;
+
+  box-shadow: rgba(181, 180, 180, 0.35) 0px 5px 15px;
+}
+.secondNavbar.fixed-top {
+  transition: all 0.3s; /* Add a smooth transition effect */
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.8
+  ); /* Set the background color of the fixed navbar */
+  backdrop-filter: blur(
+    10px
+  ); /* Add a blur effect to the navbar background (for modern browsers) */
+  -webkit-backdrop-filter: blur(
+    10px
+  ); /* Add a blur effect to the navbar background (for Safari) */
+  position: fixed;
+
+  /* Set a higher z-index to ensure the navbar is above other content */
+}
+/* Applique un effet de survol avec une animation d'underline */
+.navbar-nav li.nav-item {
+  margin-left: 20px; /* Ajoutez la marge souhaitée */
+}
+.navbar-nav li.nav-item span {
+  margin-right: 10px; /* Ajoutez la marge souhaitée */
+}
+.navbar-nav li.nav-item a.nav-link {
+  position: relative;
+  transition: color 0.3s, border-bottom 0.3s;
+}
+
+.navbar-nav li.nav-item a.nav-link:before {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #3a6884; /* Couleur de l'underline */
+  transition: width 0.3s;
+}
+
+.navbar-nav li.nav-item a.nav-link:hover {
+  color: #3a6884; /* Couleur du texte au survol */
+}
+
+.navbar-nav li.nav-item a.nav-link:hover:before {
+  width: 100%;
+}
+.d-flex {
+  margin-right: 10px;
+}
+.searchButton {
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg: #3a6884;
+  --bs-btn-hover-border-color: #3a6884;
+  --bs-btn-color: #3a6884;
+  --bs-btn-border-color: #3a6884;
+  --bs-btn-active-border-color: #3a6884;
+}
+.home {
+  color: #26516c !important;
+  font-weight: 500;
+}
+.navbar-brand {
+  color: #0b2b3f !important;
+  margin-left: 20px;
+}
+.avatar {
+    width: 40px; /* Set the desired width of the avatar */
+    height: 40px; /* Set the desired height of the avatar */
+    border-radius: 50%;
+    margin-right: 10px; /* Create a circular avatar */
+  }
+  .name {
+    margin-right: 20px; /* Create a circular avatar */
+  }
+  .save{
+    background: #969ca7;
+  }
+.edit {
+    background: #797e87;
+    border: 0;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    font-size: 20px;
+    height: 40px;
+    line-height: 40px;
+    outline: none;
+    padding: 0;
+    padding-right: 10px;
+    position: relative;
+    -webkit-transition: background 0.4s;
+    transition: background 0.4s;
+    margin-top: 20px;
+  }
+  .edit:hover {
+    background: #758493;
+  }
+  .edit span {
+    display: inline-block;
+    float : left;
+  }
+  .edit .edit-icon {
+    height: 40px;
+    position: relative;
+    width: 40px;
+  }
+  .edit {
+    margin-left: auto;
+    margin-left: 42%;
+  }
+  
+/* Media queries */
+@media only screen and (max-width: 768px) {
+    .profile-container {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    .contact div:last-child {
+      margin-bottom: 0;
+    }
+  
+    .edit {
+      margin: 20px 0;
+      
+    }
+  }
+  .editB{
+    margin-right: 100px;
+  }
+  @media only screen and (max-width: 1240px) {
+    .editB{
+      margin-right: 30px;
+    }
+    .contact-wrapper {
+      display: flex;
+      padding-right: 30px;
+    
+      
+    }
+    
+  }
+  @media only screen and (max-width: 950px) {
+    .edit {
+      /* You can adjust the values below to decrease the button size */
+      width: 40px;
+      height: 40px;
+     
+    }
+    .pro{
+      margin-top: 50px;
+    }
+    
+    /* If you want to reduce the icon size */
+  
+    
+  }
+  
+  .edit-icon:before {
+    border: 3px solid #fff;
+    border-radius: 3px;
+    content: "";
+    display: inline-block;
+    height: 50%;
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    width: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .edit-icon:after {
+    background: #758493;
+    border: 2px #fff solid;
+    border-bottom-left-radius: 5px 15px;
+    border-bottom-right-radius: 5px 15px;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    box-shadow: 0 0 0 2px #758493;
+    content: "";
+    display: inline-block;
+    height: 55%;
+    position: absolute;
+    top: 7%;
+    left: 45%;
+    width: 6px;
+    transform: translate(0, 0) rotate(45deg);
+    transform-origin: 50% 75%;
+    transition: background 0.4s, box-shadow 0.4s;
+  }
+  .edit:hover span:after {
+    background: #758493;
+    box-shadow: 0 0 0 2px #758493;
+    animation: wiggle 0.25s 3 linear;
+  }
+  .classe1{
+    padding-top:3%;
+    
+    
+  }
+  td {
+    height: 55px;
+   
+    text-align: left; /* Centre le contenu horizontalement */
+    vertical-align: middle; /* Centre le contenu verticalement */
+    padding-left: 130px; /* Ajoute un espacement autour du contenu */
+  }
+  .card{
+    margin-left: 2.7%;
+    background-color: rgb(245, 245, 245);
+  }
+  .error-message{
+    color: red;
+    margin-left:35%;
+  }

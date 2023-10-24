@@ -1,0 +1,73 @@
+<div class="outer">
+    <div class="container">
+        <div class="row">
+            <div class="offset-md-2 col-lg-5 col-md-7 offset-lg-4 offset-md-3">
+                <div class=" form panel border bg-white">
+                    <div class="panel-heading">
+                        <h3 class="pt-3 font-weight-bold title">User Register</h3>
+                    </div>
+                    <div class="panel-body p-3">
+                       <!-- (ngSubmit)="onSubmit()" -->
+                        <form [formGroup]="signUpForm" >
+
+                            <div class="form-group pt-3">
+                                <div class="input-fieldd" [class.error]="signUpForm.controls['Name'].dirty && signUpForm.hasError('required','Name')"> <span class="fa fa-lock px-2"><i class="bi bi-person-fill"> </i> </span><input formControlName="Name" type="text" placeholder="Name"> </div>
+                            </div>
+                            <small *ngIf="signUpForm.controls['Name'].dirty && signUpForm.hasError('required','Name')" class="text-danger">*Name is required*</small>
+                           
+                               
+                            <div class="form-group pt-3">
+                                <div class="input-fieldd" [class.error]="signUpForm.controls['Email'].dirty && signUpForm.hasError('required','Email')"> <span class="fa fa-lock px-2"><i class="bi bi-envelope-at-fill"></i></span > <input formControlName="Email" type="text" placeholder="Email"> </div>
+                            </div>
+                            <small *ngIf="signUpForm.controls['Email'].dirty && signUpForm.hasError('required','Email')" class="text-danger">*Email is required*</small>
+                           
+                            <div class="form-group pt-3">
+                                <div class="input-fieldd" [class.error]="signUpForm.controls['Password'].dirty && signUpForm.hasError('required','Password')"> <span class="fa fa-lock px-2"><i class="bi bi-lock-fill"></i></span> <input formControlName="Password" [type]="type" placeholder="Password">
+                                <button (click)="hideShowPass()" type="button" class="bg-white text-muted"> <span class="fa {{eyeIcon}}"></span> </button>                                    </div>
+                            </div>
+                            <small *ngIf="signUpForm.controls['Password'].dirty && signUpForm.hasError('required','Password')" class="text-danger">*Password is required*</small>
+  
+                                         
+                            <div class="form-group pt-3">
+                                <div class="input-fieldd" [class.error]="signUpForm.controls['Bio'].dirty && signUpForm.hasError('required','Bio')"> <span class="fa fa-user p-2"><i class="bi bi-person-lines-fill"></i></span> <input formControlName="Bio" type="text" placeholder="Bio"> </div>
+                            </div>
+                            <small *ngIf="signUpForm.controls['Bio'].dirty && signUpForm.hasError('required','Bio')" class="text-danger">*Bio is required*</small>
+                            
+
+
+                            <div class="p">
+                                <div class="form-group pt-3">
+                                    <div class="a1 input-fieldd1"> <span class="fa fa-user p-2"><i class="bi bi-lightbulb-fill"></i></span><input formControlName="Skills" type="text" placeholder="Skills"> </div>
+                                </div>
+    
+                        
+    
+                                <div class="form-group pt-3">
+                                    <div class="a2 input-fieldd2" > <span class="fa fa-phone p-2"><i class="bi bi-telephone-fill"></i></span> <input formControlName="PhoneNumber" type="text" placeholder="PhoneNumber"> </div>
+                                </div>
+                                
+                            </div>
+                            <div class="p">
+                                <div class="form-group pt-3">
+                                    <div class="a1 input-fieldd3" > <span class="fa fa-linkedin p-2"><i class="bi bi-linkedin"></i></span> <input formControlName="LinkedinProfile" type="text" placeholder="LinkedinProfile"> </div>
+                                </div>
+    
+                                <div class="form-group pt-3">
+                                    <div class="a2 input-fieldd4" > <span class="fa fa-facebook p-2"><i class="bi bi-facebook"></i></span> <input formControlName="FacebookProfile" type="text" placeholder="FacebookProfile"> </div>
+                                </div>
+    
+                            </div>
+
+               
+
+                            <button (click)= "onSignUp()" type="submit" [disabled]="!areAllFieldsFilled()" class="btn btn-primary btn-block mt-4 w-100" routerLink="userlogin">Signup</button>
+
+                            <div class="text-center pt-4 text-muted">Already have an account? <a id="forgot" routerLink="/userlogin" href="#">Login</a> </div>
+                        </form>
+                    </div>
+  
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>

@@ -1,0 +1,288 @@
+.firstNavbar {
+	height: 60px;
+	background-color: #f1f0f0be !important;
+  }
+  .fixed-top {
+	transition: all 0.3s; /* Add a smooth transition effect */
+	background-color: rgba(
+	  255,
+	  255,
+	  255,
+	  0.8
+	); /* Set the background color of the fixed navbar */
+	backdrop-filter: blur(
+	  10px
+	); /* Add a blur effect to the navbar background (for modern browsers) */
+	-webkit-backdrop-filter: blur(
+	  10px
+	); /* Add a blur effect to the navbar background (for Safari) */
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 1030; /* Set a higher z-index to ensure the navbar is above other content */
+  }
+  .navbar-text {
+	align-items: center;
+  }
+  .avatar {
+	height: 40px;
+	width: 40px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border: 1px solid transparent;
+	position: relative;
+	border-radius: 100px;
+	font-weight: 500;
+	font-size: 20px;
+	line-height: 20px;
+  }
+  .stat {
+	  display: flex;
+	  position: absolute;
+	  right: -2px;
+	  bottom: -2px;
+	  display: block;
+	  width: 12px;
+	  height: 12px;
+	  z-index: 9;
+	  border: 2px solid #ffffff;
+	  border-radius: 100px;
+	  &.green {
+		background: #00ba34;
+	  }
+	  &.grey {
+		background: #969696;
+	  }
+	}
+  .profile {
+	margin-right: 20px; /* Create a circular avatar */
+  }
+  .secondNavbar {
+	height: 60px;
+	background-color: #fff !important;
+  
+	box-shadow: rgba(181, 180, 180, 0.35) 0px 5px 15px;
+  }
+  .secondNavbar.fixed-top {
+	transition: all 0.3s; /* Add a smooth transition effect */
+	background-color: rgba(
+	  255,
+	  255,
+	  255,
+	  0.8
+	); /* Set the background color of the fixed navbar */
+	backdrop-filter: blur(
+	  10px
+	); /* Add a blur effect to the navbar background (for modern browsers) */
+	-webkit-backdrop-filter: blur(
+	  10px
+	); /* Add a blur effect to the navbar background (for Safari) */
+	position: fixed;
+  
+	/* Set a higher z-index to ensure the navbar is above other content */
+  }
+  /* Applique un effet de survol avec une animation d'underline */
+  .navbar-nav li.nav-item {
+	margin-left: 20px; /* Ajoutez la marge souhaitée */
+  }
+  .navbar-nav li.nav-item span {
+	margin-right: 10px; /* Ajoutez la marge souhaitée */
+  }
+  .navbar-nav li.nav-item a.nav-link {
+	position: relative;
+	transition: color 0.3s, border-bottom 0.3s;
+  }
+  
+  .navbar-nav li.nav-item a.nav-link:before {
+	content: "";
+	position: absolute;
+	bottom: -2px;
+	left: 0;
+	width: 0;
+	height: 2px;
+	background-color: #3a6884; /* Couleur de l'underline */
+	transition: width 0.3s;
+  }
+  
+  .navbar-nav li.nav-item a.nav-link:hover {
+	color: #3a6884; /* Couleur du texte au survol */
+  }
+  
+  .navbar-nav li.nav-item a.nav-link:hover:before {
+	width: 100%;
+  }
+  .d-flex {
+	margin-right: 10px;
+  }
+  .searchButton {
+	--bs-btn-hover-color: #fff;
+	--bs-btn-hover-bg: #3a6884;
+	--bs-btn-hover-border-color: #3a6884;
+	--bs-btn-color: #3a6884;
+	--bs-btn-border-color: #3a6884;
+	--bs-btn-active-border-color: #3a6884;
+  }
+  .home {
+	color: #26516c !important;
+	font-weight: 500;
+  }
+  .navbar-brand {
+	color: #0b2b3f !important;
+	margin-left: 20px;
+  }
+  
+
+@import "https://s3-us-west-2.amazonaws.com/s.cdpn.io/584938/dashboard.scss";
+$bg: #d7dde5;
+$light-text: #858f9d;
+$dark-text: #eaeef6;
+$light-bg: #bac8dc;
+
+
+a:hover {
+	text-decoration: none;
+}
+.caption{
+    margin-left: 1%;
+    margin-top: 15%;
+ 
+
+}
+
+p,
+figure {
+	margin: 0;
+	padding: 0;
+}
+
+@mixin clear() {
+	&:before,
+	&:after {
+		content: " ";
+		display: table;
+	}
+	
+	&:after {
+		clear: both;
+	}
+}
+
+
+.projects-table {
+	background: #eaeef6;
+	width: 120%;
+ 
+    margin-top: 5%;
+	
+	td,
+	th {
+		color: black;
+		padding: 10px 22px;
+		vertical-align: middle;
+	}
+	
+	td p {
+		font-size: 15px;
+		
+		&:last-of-type {
+			color: $light-text;
+			font-size: 11px;
+		}
+	}
+	
+	th {
+		background-color: $light-bg;
+	}
+	
+	tr {
+		&:hover {
+			background-color: lighten($dark-text, 5%);
+		}
+		
+		&:not(:last-of-type) {
+			border-bottom: 1px solid $light-bg;
+		}
+	}
+	
+	.member {
+		figure,
+		.member-info {
+			display: inline-block;
+			vertical-align: top;
+		}
+		
+		figure + .member-info {
+			margin-left: 7px;
+		}
+		
+		
+	}
+	
+	.status > form {
+		float: right;
+	}
+	
+	.status-text {
+		display: inline-block;
+		font-size: 12px;
+		margin: 11px 0;
+		padding-left: 20px;
+		position: relative;
+		
+		&:before {
+			border: 3px solid;
+			border-radius: 50%;
+			content: "";
+			height: 14px;
+			left: 0;
+			position: absolute;
+			top: 1px;
+			width: 14px;
+		}
+		
+		&.status-blue:before {
+			border-color: #1C93ED;
+		}
+		
+		&.status-green:before {
+			border-color: #66B92E;
+		}
+		
+		&.status-orange:before {
+			border-color: #DA932C;
+		}
+		
+		&.status-red:before {
+			border-color: #D65B4A;
+		}
+	}
+}
+// selectric plugin styling
+.selectric {
+	background-color: transparent;
+	border-color: $light-bg;
+	border-radius: 4px;
+	.label {
+		color: $light-text;
+		line-height: 34px;
+		margin-right: 10px;
+		text-align: left;
+	}
+	&-wrapper {
+		float: right;
+		width: 150px;
+	}
+}
+// charts
+.chart {
+	border-radius: 3px;
+	// box-shadow: 0 0 10px -3px black;
+	border: 1px solid $light-bg;
+	color: white;
+	padding: 10px;
+	position: relative;
+	text-align: center;
+	
+}

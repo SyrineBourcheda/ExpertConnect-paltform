@@ -1,0 +1,122 @@
+<div class="body">
+    <nav class="navbar bg-body-tertiary navbarExpert fixed-top">
+      <div class="container-fluid d-flex justify-content-between">
+        <span class="navbar-brand mb-0 h1">Logo</span>
+        <div class="d-flex align-items-center navbar-text">
+          <span class="ml-2 name">{{ expertuserr.name }}</span>
+          <img src="../../../assets/avatar.png" alt="Avatar" class="avatar" />
+        </div>
+      </div>
+    </nav>
+  
+    <h5 class="pro info">Professional informations :</h5>
+    
+   <section class="profile">
+    <div class="profile-container">
+      <div class="logo">
+        <img src="https://img.freepik.com/vecteurs-premium/logo-entreprise-conception-avatar_1465-2.jpg" alt="Logo" width="130" />
+      </div>
+      <div class="info">
+        <h3 >
+          <span class="Name" *ngIf="!editing">{{ expertuserr.name }}</span></h3>
+        <input class="Name" *ngIf="editing" type="text"  [(ngModel)]="expertuserr.name" />
+        <p class="bio" *ngIf="!editing">{{ expertuserr.bio }}</p>
+        <textarea class="bio" *ngIf="editing" type="text" [(ngModel)]="expertuserr.bio"></textarea>
+      </div>
+      <div class="contact-wrapper">
+        <div class="contact font">
+          <div>
+            <h6>Company Name:</h6>
+          </div>
+          <div >
+            <span *ngIf="!editing">{{ expertuserr.companyName }}</span>
+            <input *ngIf="editing" type="text"  [(ngModel)]="expertuserr.companyName" />
+          </div>
+          
+            
+          
+        </div>
+        <div class="contact font">
+          <div>
+            <h6>Address:</h6>
+          </div>
+
+          <div >
+            <span *ngIf="!editing" >{{expertuserr.email}}</span>
+            <input *ngIf="editing" type="text"  [(ngModel)]="expertuserr.email" />
+          </div>
+
+        
+
+          <div>
+            <span *ngIf="!editing">{{ expertuserr.phoneNumber}}</span>
+            <input *ngIf="editing" type="text" [(ngModel)]="expertuserr.phoneNumber" />
+          </div>
+        </div>
+        <div class="contact font">
+          <div>
+            <h6 *ngIf="expertuserr.linkedinProfile != '' || expertuserr.facebookProfile != ''">Social links:</h6>
+          </div>
+          
+          <div>
+            <i *ngIf="expertuserr.linkedinProfile != '' " class="bi bi-linkedin"></i>
+            <div *ngIf="!editing; else editLinkedin">
+              <a href="{{ expertuserr.linkedinProfile }}">{{ expertuserr.linkedinProfile}}</a>
+            </div>
+            <ng-template #editLinkedin>
+              <input *ngIf="editing" type="text" [(ngModel)]="expertuserr.linkedinProfile" />
+            </ng-template>
+          </div>
+          <div>
+            <i class="bi bi-facebook" *ngIf="expertuserr.facebookProfile != '' "></i>
+            <div *ngIf="!editing; else editFacebook">
+              <a href="{{ expertuserr.facebookProfile }}">{{ expertuserr.facebookProfile }}</a>
+            </div>
+            <ng-template #editFacebook>
+              <input *ngIf="editing" type="text" [(ngModel)]="expertuserr.facebookProfile" />
+            </ng-template>
+          </div>
+
+        </div>
+      </div>
+     
+      <div class="editB">
+        <button type="button" class="edit" (click)="toggleEditing()"> 
+        <span class="edit-icon"></span><span>Edit</span> 
+        </button>
+       
+        <button class="save" *ngIf="editing" (click)="saveChanges()">Save</button>
+
+        
+       
+      </div>
+    </div>
+  </section>
+  
+
+    
+    
+    <h5 class="info"></h5>
+  
+    <section class="profile session">
+      <div class="content">
+        <h5 style="font-family: Raleway; font-weight: bold">
+          create your exchange session now !
+        </h5>
+        <p>
+          Create live exchange sessions with candidates effortlessly using the
+          'Add Session' button. <br />Schedule and conduct real-time interviews
+          and interactions to assess their skills and suitability.<br />
+          Let's find the perfect match for your team!"
+        </p>
+        <button
+          type="button"
+          class="btn btn-secondary btn-lg"
+          routerLink="/sessionForm"
+        >
+          Create Session
+        </button>
+      </div>
+    </section>
+  </div>
+  

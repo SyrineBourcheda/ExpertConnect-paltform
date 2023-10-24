@@ -1,0 +1,677 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap");
+.body {
+  background-color: #efefefe2;
+  padding-top: 7%;
+  padding-bottom: 9%;
+  /* Set the desired background color */
+}
+.profile {
+  box-shadow: 0 4px 8px rgba(230, 228, 228, 0.245);
+  margin-top: 2%;
+  background-color: #ffffffc1;
+  width: 95%;
+  margin-left: 30px;
+}
+
+.navbarExpert {
+  height: 60px;
+  background-color: #f1f0f0be !important;
+
+  box-shadow: rgba(181, 180, 180, 0.35) 0px 5px 15px;
+}
+.navbarExpert.fixed-top {
+  transition: all 0.3s; /* Add a smooth transition effect */
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.8
+  ); /* Set the background color of the fixed navbar */
+  backdrop-filter: blur(
+    10px
+  ); /* Add a blur effect to the navbar background (for modern browsers) */
+  -webkit-backdrop-filter: blur(
+    10px
+  ); /* Add a blur effect to the navbar background (for Safari) */
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1030; /* Set a higher z-index to ensure the navbar is above other content */
+}
+.navbar-text {
+  align-items: center;
+}
+
+
+
+/* General styles */
+/* General styles */
+.profile {
+  max-width: 100%;
+  overflow-x: auto;
+  font-size: medium;
+  font-family: Raleway;
+}
+
+.profile-container {
+  display: flex;
+  align-items: center;
+  padding: 40px;
+  
+}
+
+
+
+
+
+.contact {
+  margin-right: 90px;
+   /* Adjust the spacing between the contact divs */
+}
+.contact a {
+  text-decoration: none;
+  color: inherit;
+}
+.contact:last-child {
+  margin-right: 0; /* Remove margin for the last contact div */
+}
+
+.contact div {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.contact i {
+  margin-right: 5px;
+}
+
+.edit {
+  margin-left: auto;
+}
+.font h6{
+  font-weight: bold;
+}
+
+/* Media queries */
+@media only screen and (max-width: 768px) {
+  .profile-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .contact div:last-child {
+    margin-bottom: 0;
+  }
+
+  
+  
+}
+
+
+
+@media only screen and (max-width: 950px) {
+  .edit {
+    /* You can adjust the values below to decrease the button size */
+    width: 40px;
+    height: 40px;
+   
+  }
+  .pro{
+    margin-top: 50px;
+  }
+  
+  /* If you want to reduce the icon size */
+
+  
+}
+
+.edit-icon:before {
+  border: 3px solid #fff;
+  border-radius: 3px;
+  content: "";
+  display: inline-block;
+  height: 50%;
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  width: 50%;
+  transform: translate(-50%, -50%);
+}
+.edit-icon:after {
+  background: #758493;
+  border: 2px #fff solid;
+  border-bottom-left-radius: 5px 15px;
+  border-bottom-right-radius: 5px 15px;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+  box-shadow: 0 0 0 2px #758493;
+  content: "";
+  display: inline-block;
+  height: 55%;
+  position: absolute;
+  top: 7%;
+  left: 45%;
+  width: 6px;
+  transform: translate(0, 0) rotate(45deg);
+  transform-origin: 50% 75%;
+  transition: background 0.4s, box-shadow 0.4s;
+}
+
+@keyframes wiggle {
+  0% {
+    transform: translate(0, 0) rotate(45deg);
+  }
+  25% {
+    transform: translate(0, 0) rotate(25deg);
+  }
+  50% {
+    transform: translate(0, 0) rotate(45deg);
+  }
+  75% {
+    transform: translate(0, 0) rotate(65deg);
+  }
+  100% {
+    transform: translate(0, 0) rotate(45deg);
+  }
+}
+
+.session {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  height: 70vh;
+  width: 95%;
+  background-color: rgb(216, 235, 242) !important;
+}
+.session1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40vh;
+  width: 95%;
+  background-color:  #efefefe2!important;
+}
+.session0 {
+
+display: flex;
+position: relative;
+justify-content: center;
+align-items: center;
+overflow: hidden;
+height: 40vh;
+width: 95%;
+background-color: rgb(216, 235, 242) !important;
+}
+
+
+.content {
+  text-align: center;
+  font-size: 100%;
+  font-family: Raleway;
+
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+.btn {
+  /* Your button styles here */
+  padding: 5px 8px;
+  font-size: 16px;
+  background-color: #758493;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  animation: enlargeButton 2s infinite alternate;
+  margin-top: 20px; /* Apply the animation to the button */
+}
+
+/* Define the animation */
+@keyframes enlargeButton {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.2); /* Enlarge the button by 10% */
+  }
+}
+.avatar {
+ 
+  margin-right: 10px;
+  margin-left: 5%;
+  
+  width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+i {
+  opacity: 0.8;
+}
+.font {
+  text-decoration: none;
+  color: rgb(0, 0, 0);
+  font-size: 12px;
+}
+
+
+/* Your previous CSS code... */
+/* General styles */
+.profile {
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+.profile-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.profile-table td {
+  padding: 10px;
+  vertical-align: middle;
+  font-size: medium;
+  font-family: Raleway;
+  text-align: center;
+}
+
+.logo img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Media queries */
+@media only screen and (max-width: 768px) {
+  .profile-table td {
+    display: block;
+    text-align: left;
+  }
+
+  .profile-table td:last-child {
+    display: none;
+  }
+
+
+}
+
+/* Media queries for responsive layout */
+@media (max-width: 697px) {
+  /* Adjust the styles for screens with a maximum width of 768px or smaller */
+  .session {
+    width: 90%;
+  }
+  .profile {
+    width: 90%;
+  }
+  .content p {
+    font-size: 60%;
+  }
+ 
+  
+}
+
+
+
+
+@media (max-width: 769px) {
+ 
+  .font {
+    font-size: 10px;
+  }
+  .font h6{
+    font-size: 10px;
+    margin-top: 25px;
+    
+  }
+
+}
+
+
+
+
+
+
+img { 
+  height: auto; 
+  max-width: 100%;
+position: relative; 
+}
+
+
+
+nav a { color: black;
+   display: inline-block;
+    margin: 0 4px;
+     text-decoration: none; }
+nav a:first-child { margin: 0 4px 0 0; }
+
+main { margin: 0 5%; }
+
+.home-page { 
+  display: grid; 
+  font-size: 24px;
+   grid-template-columns: 50% 50%;
+    line-height: 1.4;
+     margin: 2em auto 0 auto;
+     max-width: 45em; padding: 0; }
+.home-page h1 { font-size: 1em;
+   margin: 4em 0 0 0;
+  color: #8151c0; }
+
+
+@media screen and (max-width: 75em) {
+  .home-page { display:inline; 
+  }
+  .block{
+    height: 200px;
+  }
+}
+
+
+
+#container {
+  width: auto;
+  height: auto;
+  margin-top: 120px;
+  -webkit-perspective: 800px;
+          perspective: 800px;
+  text-align: center;
+}
+#container1 h1 {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 700;
+  color: #8151c0;
+
+}
+
+h3{
+  color: #8151c0;
+
+}
+
+.bas{
+  background-color: #c3c5c7;
+}
+.loginexpert{
+  background-color:#8f6bbf;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    :root {
+      --box-width: 250px;
+      --box-height: 350px;
+      --box-bRadius: 10px;
+      --box-background: white;
+      --box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+      --text-color: black;
+      --links-color: #626262;
+      --bottom-box-bg: #F5F5F5;
+    }
+    
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+    
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 97vh;
+    
+      .box {
+        position: relative;
+        width: 350px;
+        height: 350px;
+        border-radius: 10px;
+        margin: 2%;
+        background-color: white;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    
+        
+    
+
+    .top {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 50%;
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+      
+  
+        .ico {
+          text-align: center;
+          font-size: 18px;
+          color: #626262;
+          transition: 0.5s;
+        }
+      }
+      
+      .profile, .title, .job {
+        margin: 5px;
+      }
+      
+      .profile {
+        width: 80px;
+        height: 80px;
+        border: 4px solid white;
+        box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.2);
+        border-radius: 45%;
+        background-image: url("https://cdn.dribbble.com/users/16041/avatars/small/e6c7fac4033b9c233a3bd82ce55c4430.jpg");
+        z-index: 2;
+      }
+      
+      .title {
+        font-size: 18px;
+        font-weight: 700;
+      }
+      
+      .job {
+        font-size: 14px;
+        font-weight: 400;
+      }
+    }
+
+    .bottom {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-content: center;
+      height: 50%;
+      background-color: #F5F5F5;
+      border-bottom-left-radius: 10px;
+      border-bottom-right-radius: 10px;
+
+        text-align: center;
+        
+       
+       
+      
+      
+      .social-links .ul {
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        height: 40px;
+
+        font-size: 24px;
+          
+      }
+    }
+  }
+
+a {
+  color: #626262;
+  font-size: 15px;
+  text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+  }
+
+}
+p{
+  height: 0px;
+}
+.p11 {
+  max-height: 100px; /* Adjust the height as needed */
+  overflow: auto;
+  height: 400px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  .card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+    background-color: #c3c2c2;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+   .card-header > div {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .card-header h2 {
+    font-weight: bold;
+    margin-right: 0.5rem;
+  }
+  
+  .card-text {
+    color: #444;
+    margin-top: 0.5rem;
+    height: 20px;
+  }
+  
+ 
+
+  
+  .avatar-content svg {
+    width: 24px;
+    height: 24px;
+    color: #8151c0;
+  }
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* formulaire */
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+.container3 {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    height: 70vh;
+    width: 95%;
+    background-color: #242424;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+input[type="email"],
+input[type="password"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+button {
+    background-color:#8f6bbf;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #8151c0;
+}

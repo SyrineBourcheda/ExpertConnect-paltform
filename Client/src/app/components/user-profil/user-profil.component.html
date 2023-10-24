@@ -1,0 +1,193 @@
+<nav class="fixed-top">
+  <nav class="navbar bg-body-tertiary firstNavbar">
+    <div class="container-fluid d-flex justify-content-between">
+      <a class="navbar-brand mt-2 mt-lg-0" href="#">
+        <img
+          src="https://mdbcdn.b-cdn.net/img/logo/mdb-transaprent-noshadows.webp"
+          height="25"
+          alt="MDB Logo"
+          loading="lazy"
+        />
+      </a>
+      <div ngbDropdown class="dropdown" style="color: black">
+        <a
+          class="dropdown-toggle d-flex align-items-center hidden-arrow"
+          id="navbarDropdownMenuAvatar"
+          role="button"
+          ngbDropdownToggle
+          style="color: black; text-decoration: none"
+        >
+         
+
+          <div
+          class="avatar"
+          style="
+            background-color: #cbcdd7;
+            border-color: #dee8f7;
+            color: #161c45;
+          "
+        >
+          {{ extractInitials(user.name) }}
+          <span class="stat green"></span>
+        </div>
+        </a>
+        <ul
+          class="dropdown-menu dropdown-menu-end"
+          aria-labelledby="navbarDropdownMenuAvatar"
+          ngbDropdownMenu
+        >
+          <li>
+            <a class="dropdown-item" href="/userProfile">My profile</a>
+          </li>
+
+          <li>
+            <a class="dropdown-item" href="/userlogin" (click)="UserLogout()"
+              >Logout</a
+            >
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light secondNavbar">
+    <div class="container-fluid">
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarTogglerDemo01"
+        aria-controls="navbarTogglerDemo01"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a
+              class="nav-link active home"
+              aria-current="page"
+              href="#"
+              routerLink="/userPage"
+              ><span><i class="bi bi-house"></i></span>Home</a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" routerLink="/userSessions"
+              ><span><i class="bi bi-menu-up"></i></span>Reservations</a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/userProfile"
+              ><span><i class="bi bi-person"></i></span>Profile</a
+            >
+          </li>
+        </ul>
+      
+      </div>
+    </div>
+  </nav>
+</nav>
+<div style="margin-top: 12%; margin-left: 60px;"><h4>Profile informations:</h4></div>
+<div class="row m-3 classe1">
+  <div class="card col-md-3 text-center mr-3">
+    <div class="col">
+      <div class="mb-3 mt-3">
+        <img
+          src="assets/avatar.png"
+          class="rounded-circle"
+          width="150px"
+          height="150px"
+        />
+      </div>
+      <div class="mb-3">
+        <h4>
+          <span>{{ user.name }}</span>
+        </h4>
+        <small class="form-text text-muted"
+          ><span>{{ user.bio }}</span></small
+        >
+      </div>
+
+      <div class="col mb-3 p-0 editB">
+        <button type="button" class="edit" (click)="toggleEditMode()">
+          <span class="edit-icon"></span><span>Edit</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="card col-md-8">
+    <table class="table">
+      <tbody>
+        <tr>
+          <th scope="row"><i class="bi bi-person-fill"></i> Full Name</th>
+          <td [ngClass]="{ 'edit-mode': editMode }">
+            <span *ngIf="!editMode">{{ user.name }}</span>
+            <input *ngIf="editMode" type="text" [(ngModel)]="user.name" />
+          </td>
+        </tr>
+        <tr>
+          <th scope="row"><i class="bi bi-envelope-at-fill"></i> Email</th>
+          <td [ngClass]="{ 'edit-mode': editMode }">
+            <span *ngIf="!editMode">{{ user.email }}</span>
+            <input *ngIf="editMode" type="text" [(ngModel)]="user.email" />
+          </td>
+        </tr>
+        <tr>
+          <th scope="row"><i class="bi bi-pencil-fill"></i> Bio</th>
+          <td [ngClass]="{ 'edit-mode': editMode }">
+            <span *ngIf="!editMode">{{ user.bio }}</span>
+            <input *ngIf="editMode" type="text" [(ngModel)]="user.bio" />
+          </td>
+        </tr>
+        <tr>
+          <th scope="row"><i class="bi bi-lightbulb-fill"></i> Skills</th>
+          <td [ngClass]="{ 'edit-mode': editMode }">
+            <span *ngIf="!editMode">{{ user.skills }}</span>
+            <input *ngIf="editMode" type="text" [(ngModel)]="user.skills" />
+          </td>
+        </tr>
+        <tr>
+          <th scope="row"><i class="bi bi-telephone-fill"></i> PhoneNumber</th>
+          <td [ngClass]="{ 'edit-mode': editMode }">
+            <span *ngIf="!editMode">{{ user.phoneNumber }}</span>
+            <input
+              *ngIf="editMode"
+              type="text"
+              [(ngModel)]="user.phoneNumber"
+            />
+          </td>
+        </tr>
+        <tr>
+          <th scope="row"><i class="bi bi-linkedin"></i> LinkedinProfile</th>
+          <td [ngClass]="{ 'edit-mode': editMode }">
+            <span *ngIf="!editMode">{{ user.linkedinProfile }}</span>
+            <input
+              *ngIf="editMode"
+              type="text"
+              [(ngModel)]="user.linkedinProfile"
+            />
+          </td>
+        </tr>
+        <tr>
+          <th scope="row"><i class="bi bi-facebook"></i> FacebookProfile</th>
+          <td [ngClass]="{ 'edit-mode': editMode }">
+            <span *ngIf="!editMode">{{ user.facebookProfile }}</span>
+            <input
+              *ngIf="editMode"
+              type="text"
+              [(ngModel)]="user.facebookProfile"
+            />
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <div *ngIf="!formValid" class="error-message">
+      Veuillez remplir tous les champs obligatoires.
+  </div>
+  
+    <button class="save" *ngIf="editMode" (click)="saveChanges()">Save</button>
+  </div>
+</div>

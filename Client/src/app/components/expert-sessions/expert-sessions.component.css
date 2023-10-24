@@ -1,0 +1,271 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap");
+.body {
+  background-color: #efefefe2;
+  padding-top: 5%;
+  padding-bottom: 45%;
+  /* Set the desired background color */
+}
+
+.info {
+  margin-left: 35px;
+  opacity: 0.8;
+  font-family: Raleway;
+  font-weight: bold;
+}
+.firstNavbar {
+  height: 60px;
+  background-color: #f1f0f0be !important;
+}
+.fixed-top {
+  transition: all 0.3s; /* Add a smooth transition effect */
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.8
+  ); /* Set the background color of the fixed navbar */
+  backdrop-filter: blur(
+    10px
+  ); /* Add a blur effect to the navbar background (for modern browsers) */
+  -webkit-backdrop-filter: blur(
+    10px
+  ); /* Add a blur effect to the navbar background (for Safari) */
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1030; /* Set a higher z-index to ensure the navbar is above other content */
+}
+.navbar-text {
+  align-items: center;
+}
+.avatar {
+  height: 40px;
+  width: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid transparent;
+  position: relative;
+  border-radius: 100px;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 20px;
+}
+.stat {
+    display: flex;
+    position: absolute;
+    right: -2px;
+    bottom: -2px;
+    display: block;
+    width: 12px;
+    height: 12px;
+    z-index: 9;
+    border: 2px solid #ffffff;
+    border-radius: 100px;
+    &.green {
+      background: #00ba34;
+    }
+    &.grey {
+      background: #969696;
+    }
+  }
+.profile {
+  margin-right: 20px; /* Create a circular avatar */
+}
+.secondNavbar {
+  height: 60px;
+  background-color: #fff !important;
+
+  box-shadow: rgba(181, 180, 180, 0.35) 0px 5px 15px;
+}
+.secondNavbar.fixed-top {
+  transition: all 0.3s; /* Add a smooth transition effect */
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.8
+  ); /* Set the background color of the fixed navbar */
+  backdrop-filter: blur(
+    10px
+  ); /* Add a blur effect to the navbar background (for modern browsers) */
+  -webkit-backdrop-filter: blur(
+    10px
+  ); /* Add a blur effect to the navbar background (for Safari) */
+  position: fixed;
+
+  /* Set a higher z-index to ensure the navbar is above other content */
+}
+/* Applique un effet de survol avec une animation d'underline */
+.navbar-nav li.nav-item {
+  margin-left: 20px; /* Ajoutez la marge souhaitée */
+}
+.navbar-nav li.nav-item span {
+  margin-right: 10px; /* Ajoutez la marge souhaitée */
+}
+.navbar-nav li.nav-item a.nav-link {
+  position: relative;
+  transition: color 0.3s, border-bottom 0.3s;
+}
+
+.navbar-nav li.nav-item a.nav-link:before {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #3a6884; /* Couleur de l'underline */
+  transition: width 0.3s;
+}
+
+.navbar-nav li.nav-item a.nav-link:hover {
+  color: #3a6884; /* Couleur du texte au survol */
+}
+
+.navbar-nav li.nav-item a.nav-link:hover:before {
+  width: 100%;
+}
+.d-flex {
+  margin-right: 10px;
+}
+.searchButton {
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg: #3a6884;
+  --bs-btn-hover-border-color: #3a6884;
+  --bs-btn-color: #3a6884;
+  --bs-btn-border-color: #3a6884;
+  --bs-btn-active-border-color: #3a6884;
+}
+.home {
+  color: #26516c !important;
+  font-weight: 500;
+}
+.navbar-brand {
+  color: #0b2b3f !important;
+  margin-left: 20px;
+}
+
+
+/* Utilities */
+.carde::after,
+.carde img {
+  border-radius: 50%;
+}
+
+.carde,
+.stats {
+  display: flex;
+}
+
+.carde {
+  padding: 2.5rem 2rem;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.5);
+  max-width: 1370px;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.15);
+  margin: 1rem;
+ margin-left: 3%;
+  position: relative;
+  transform-style: preserve-3d;
+  overflow: hidden;
+  margin-left: 5%;
+}
+.carde::before,
+.carde::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+}
+.carde::before {
+  width: 100%;
+  height: 100%;
+  border: 1px solid #fff;
+  border-radius: 10px;
+  top: -0.7rem;
+  left: -0.7rem;
+}
+.carde::after {
+  height: 15rem;
+  width: 15rem;
+  background-color: #3a6884;
+  opacity: 0;
+  top: -8rem;
+  right: -8rem;
+  box-shadow: 2rem 6rem 0 -3rem #fff;
+}
+
+.carde img {
+  width: 8rem;
+  HEIGHT: 8rem;
+  min-width: 80px;
+  box-shadow: 0 0 0 5px #fff;
+}
+
+.infos {
+  margin-left: 1.5rem;
+}
+
+.Name {
+  margin-bottom: 1rem;
+}
+.Name h2 {
+  font-size: 1.3rem;
+}
+.Name h4 {
+  font-size: 0.8rem;
+  color: #333;
+}
+
+.text {
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+@media screen and (max-width: 450px) {
+  .carde {
+    display: block;
+  }
+}
+
+.overlay-card {
+    position: relative;
+    margin-top: -50px; /* Ajustez cette valeur pour l'espacement vertical entre les cartes */
+    z-index: 1;
+  }
+  
+  .tag {
+    -webkit-font-smoothing: antialiased;
+    box-sizing: inherit;
+    font-style: inherit;
+    font-family: inherit;
+    line-height: 1.5;
+    font-weight: 500;
+    font-size: 0.7em;
+    border-radius: 4px;
+    transition: all 0.5s ease-in-out;
+    color: #fff;
+    background-color: #567c93;
+    border: 0.5px solid #567c93;
+    position: absolute;
+    bottom: 25px; /* Ajustez cette valeur pour positionner le bouton */
+    right: 50px; /* Ajustez cette valeur pour positionner le bouton */
+    height: 40px;
+    width: 120px;
+  }
+  .tag:hover {
+    background-color: #7e9aab;
+    color: #fff;
+  }
+
+  /* Nouveau style pour le texte "Cancel Reservation" */
+  .cancel-text {
+    position: absolute;
+    top: 15px; /* Ajustez cette valeur pour positionner le texte */
+    right: 50px; /* Ajustez cette valeur pour positionner le texte */
+    font-size: 0.8em;
+    color: rgb(213, 3, 3);
+    font-weight:500 ;
+    
+  }

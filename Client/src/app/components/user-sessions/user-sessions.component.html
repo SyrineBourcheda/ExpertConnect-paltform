@@ -1,0 +1,127 @@
+<div class="bodyUser">
+  <nav class="fixed-top">
+    <nav class="navbar bg-body-tertiary firstNavbar">
+      <div class="container-fluid d-flex justify-content-between">
+        <a class="navbar-brand mt-2 mt-lg-0" href="#">
+          <img
+            src="https://mdbcdn.b-cdn.net/img/logo/mdb-transaprent-noshadows.webp"
+            height="25"
+            alt="MDB Logo"
+            loading="lazy"
+          />
+        </a>
+        <div ngbDropdown class="dropdown" style="color: black">
+          <a
+            class="dropdown-toggle d-flex align-items-center hidden-arrow"
+            id="navbarDropdownMenuAvatar"
+            role="button"
+            ngbDropdownToggle
+            style="color: black; text-decoration: none"
+          >
+          <div
+          class="avatar"
+          style="
+            background-color: #cbcdd7;
+            border-color: #dee8f7;
+            color: #161c45;
+          "
+        >
+          {{ extractInitials(user.name) }}
+          <span class="stat green"></span>
+        </div>
+          </a>
+          <ul
+            class="dropdown-menu dropdown-menu-end"
+            aria-labelledby="navbarDropdownMenuAvatar"
+            ngbDropdownMenu
+          >
+            <li>
+              <a class="dropdown-item" href="/userProfile">My profile</a>
+            </li>
+
+            <li>
+              <a class="dropdown-item" href="/userlogin" (click)="UserLogout()">Logout</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light secondNavbar">
+      <div class="container-fluid">
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarTogglerDemo01"
+          aria-controls="navbarTogglerDemo01"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active " aria-current="page" href="#" routerLink="/userPage"
+                ><span><i class="bi bi-house"></i></span>Home</a
+              >
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link home" href="/userSessions"
+                ><span><i class="bi bi-menu-up"></i></span>Reservations</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/userProfile"
+                ><span><i class="bi bi-person"></i></span>Profile</a
+              >
+            </li>
+          </ul>
+          <form class="d-flex search">
+            <input
+              class="form-control me-2"
+              type="search"
+              placeholder="Search"
+              aria-label="Search"
+            />
+            <button class="btn btn-outline-success searchButton" type="submit">
+              Search
+            </button>
+          </form>
+        </div>
+      </div>
+    </nav>
+  </nav>
+  
+<div style="margin-top:6%;">
+    <div><p style="text-align: right; margin-bottom: 2%; margin-right: 6%; font-weight: 600;" >{{sessions.length}} Reservations</p></div>
+    <div  *ngIf="sessionReservations.length==0" >
+     
+      <div class="infos">
+          <h4 style="margin-left: 650px; ">No Session Is Reserved</h4>
+        </div>
+        
+    </div>
+      <div  *ngFor="let item of sessionReservations" class="cardeSession">
+        <div class="img">
+          <img
+            src={{item.session.imagePath}}
+          />
+        </div>
+        <div class="infos">
+            <span ><button  class="cancel-reservation" style="border-color: transparent; background-color: transparent;" (click)="deleteReservation(item.session.id!)" ><i class="bi bi-x"></i>Cancel Reservation</button></span> <!-- Ajout du texte "Cancel Reservation" -->
+            <h4>{{item.session.title}}</h4>
+            <p><i class="bi bi-hourglass-bottom"></i> {{ item.session.duration}} min &nbsp;&nbsp;&nbsp; <i class="bi bi-calendar-day-fill"></i> {{dateShow(item.session.date!)}} </p>
+          </div>
+          <button class="tag"  *ngIf="item.status=='In Progress'">{{item.status}}</button>
+          <button class="tag" style="background-color: rgb(126, 172, 126);" *ngIf="item.status=='Accepted'">{{item.status}}</button>
+          <button class="tag" style="background-color: rgb(124, 86, 86);" *ngIf="item.status=='Refused'">{{item.status}}</button>
+      </div>
+     
+</div>
+
+
+
+  
+</div>
+

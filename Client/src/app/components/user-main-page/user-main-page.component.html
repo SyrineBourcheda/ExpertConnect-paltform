@@ -1,0 +1,186 @@
+<div class="body">
+  <nav class="fixed-top">
+    <nav class="navbar bg-body-tertiary firstNavbar">
+      <div class="container-fluid d-flex justify-content-between">
+        <a class="navbar-brand mt-2 mt-lg-0" href="#">
+          <img
+            src="https://mdbcdn.b-cdn.net/img/logo/mdb-transaprent-noshadows.webp"
+            height="25"
+            alt="MDB Logo"
+            loading="lazy"
+          />
+        </a>
+        <div ngbDropdown class="dropdown" style="color: black">
+          <a
+            class="dropdown-toggle d-flex align-items-center hidden-arrow"
+            id="navbarDropdownMenuAvatar"
+            role="button"
+            ngbDropdownToggle
+            style="color: black; text-decoration: none"
+          >
+           
+
+            <div
+            class="avatar"
+            style="
+              background-color: #cbcdd7;
+              border-color: #dee8f7;
+              color: #161c45;
+            "
+          >
+            {{ extractInitials(user.name) }}
+            <span class="stat green"></span>
+          </div>
+          </a>
+          <ul
+            class="dropdown-menu dropdown-menu-end"
+            aria-labelledby="navbarDropdownMenuAvatar"
+            ngbDropdownMenu
+          >
+            <li>
+              <a class="dropdown-item" href="/userProfile">My profile</a>
+            </li>
+
+            <li>
+              <a class="dropdown-item" href="/userlogin" (click)="UserLogout()"
+                >Logout</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light secondNavbar">
+      <div class="container-fluid">
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarTogglerDemo01"
+          aria-controls="navbarTogglerDemo01"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a
+                class="nav-link active home"
+                aria-current="page"
+                href="#"
+                routerLink="/userPage"
+                ><span><i class="bi bi-house"></i></span>Home</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#" routerLink="/userSessions"
+                ><span><i class="bi bi-menu-up"></i></span>Reservations</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/userProfile"
+                ><span><i class="bi bi-person"></i></span>Profile</a
+              >
+            </li>
+          </ul>
+          <form class="d-flex search">
+            <input
+              class="form-control me-2"
+              type="search"
+              placeholder="Search"
+              aria-label="Search"
+            />
+            <button class="btn btn-outline-success searchButton" type="submit">
+              Search
+            </button>
+          </form>
+        </div>
+      </div>
+    </nav>
+  </nav>
+  <div class="contain">
+    <div
+      class="profileCard"
+      style="
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+        border-color: transparent;
+      "
+    >
+      <div class="profile-picture">
+        <img
+          src="https://www.pngall.com/wp-content/uploads/5/Profile-PNG-File.png"
+          alt="Profile Picture"
+        />
+      </div>
+      <h2 class="name">{{ user.name }}</h2>
+      <h3 class="username">{{ user.email }}</h3>
+      <p class="description">{{ user.bio }}</p>
+      <button class="profileButton" ><a href="/userProfile" style="text-decoration: none; color: #cbcdd7;"> Visit Profile</a> </button>
+    </div>
+  </div>
+
+  <section class="hero">
+    <div class="card-wrapper">
+      <div class="card-list">
+        <div class="container scroll-card" *ngFor="let card of paginatedData">
+          <div class="scrollingCard" style="height: 190px">
+            <!-- Contenu de la carte -->
+            <div class="top">
+              <div class="wrapper">
+                <img
+                  src="{{ card.imagePath }}"
+                  alt="Profile Picture"
+                  style="width: 70px; height: 70px"
+                />
+                <div class="infoCard">
+                  <h4 class="titre">{{ card.title }}</h4>
+                  <p class="objectives">{{ card.objectives }}</p>
+                  ...
+                  <!-- Autres éléments de la carte -->
+                </div>
+              </div>
+            </div>
+
+            <div class="bottom">
+              <p class="ad" style="font-size: 13px">
+                <i class="bi bi-hourglass-bottom"></i> {{ card.duration }} min
+              </p>
+              <p class="phone" style="font-size: 13px">
+                <i class="bi bi-calendar-day"></i> {{ dateShow(card.date!) }}
+              </p>
+              <button
+                class="tag"
+                style="font-size: 14px"
+                (click)="goToDetails(card.id!)"
+              >
+                View More
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="pagination-container">
+          <button
+            class="pagination-button"
+            (click)="prevPage()"
+            [disabled]="currentPage === 1"
+          >
+            Previous
+          </button>
+          <span class="pagination-info"
+            >{{ currentPage }} / {{ totalPages }}</span
+          >
+          <button
+            class="pagination-button"
+            (click)="nextPage()"
+            [disabled]="currentPage === totalPages"
+          >
+            Next
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

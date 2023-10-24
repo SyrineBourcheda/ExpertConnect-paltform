@@ -1,0 +1,305 @@
+<div class="bodyDetail">
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light navbarDetail">
+    <!-- Container wrapper -->
+    <div class="container-fluid">
+      <!-- Toggle button -->
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Collapsible wrapper -->
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <!-- Navbar brand -->
+        <a class="navbar-brand mt-2 mt-lg-0" href="#">
+          <img
+            src="https://mdbcdn.b-cdn.net/img/logo/mdb-transaprent-noshadows.webp"
+            height="25"
+            alt="MDB Logo"
+            loading="lazy"
+          />
+        </a>
+        <!-- Left links -->
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0" style="margin-left: 7%">
+          <li class="nav-item">
+            <a class="nav-link" href="/userPage"
+              ><span
+                ><i class="bi bi-person-fill"></i> Candidate Platform</span
+              ></a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/expertPage"
+              ><i class="bi bi-building-gear"></i> Expert Platform</a
+            >
+          </li>
+        </ul>
+        <!-- Left links -->
+      </div>
+      <!-- Collapsible wrapper -->
+
+      <!-- Right elements -->
+      <div class="d-flex align-items-center">
+        <!-- Icon -->
+        <a class="text-reset me-3" href="#">
+          <i class="fas fa-shopping-cart"></i>
+        </a>
+
+        <!-- Avatar -->
+        <div ngbDropdown class="dropdown">
+          <a
+            class="dropdown-toggle d-flex align-items-center hidden-arrow"
+            id="navbarDropdownMenuAvatar"
+            role="button"
+            ngbDropdownToggle
+          >
+          <div
+          class="avata"
+          style="
+            background-color: #cbcdd7;
+            border-color: #dee8f7;
+            color: #161c45;
+          "
+        >
+          {{ extractInitials(user.name) }}
+          <span class="stat green"></span>
+        </div>
+          </a>
+          <ul
+            class="dropdown-menu dropdown-menu-end"
+            aria-labelledby="navbarDropdownMenuAvatar"
+            ngbDropdownMenu
+          >
+            <li>
+              <a class="dropdown-item" href="/userProfile">My profile</a>
+            </li>
+
+            <li>
+              <a class="dropdown-item" href="/userlogin" (click)=" UserLogout()">Logout</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <!-- Right elements -->
+    </div>
+    <!-- Container wrapper -->
+  </nav>
+  <!-- Navbar -->
+
+  <div class="card" style="width: 82%">
+    <header class="card__gallery" style="grid-template-columns: repeat(4, 24%)">
+      <div class="card__gallery-item card__gallery-item__main">
+        <img
+          src="https://www.talostaffing.com/img/1.webp"
+          alt=""
+        />
+      </div>
+      <div class="card__gallery-item">
+        <img
+          src="../../../assets/image1.jfif"
+          alt=""
+        />
+      </div>
+      <div class="card__gallery-item">
+        <img
+          src="../../../assets/images3.jfif"
+          alt=""
+        />
+      </div>
+      <div class="card__gallery-item">
+        <img
+          src="../../../assets/image5.jfif"
+          alt=""
+        />
+      </div>
+      <div class="card__gallery-item">
+        <img
+          src="../../../assets/image4.jfif"
+          alt=""
+        />
+      </div>
+    </header>
+    <main class="card__user">
+      <img
+        src={{session.imagePath}}
+        alt=""
+        class="card__user-image"
+      />
+      <div class="card__user-info">
+        <h2 class="card__user-info__name">{{session.title}}</h2>
+        <p class="card__user-info__stats">Book Now!</p>
+      </div>
+      <div class="card__user-actions">
+        <button  *ngIf="!reservation.reserved"  class="tag" (click)="createReservation()"><i class="bi bi-camera-video-fill" ></i> Reserve a place</button>
+        <p *ngIf="reservation.reserved" style="margin-left: 100px; font-weight: 500;color: rgb(151, 8, 8);;">Already Reserved</p>
+      </div>
+    </main>
+  </div>
+
+  <section class="session-section">
+    <div class="session-box">
+      <h2 class="session-title">{{session.title}}</h2>
+      <div class="session-content">
+        <div class="session-description">
+          <h3>Objectives</h3>
+          <p>
+           {{session.objectives}}
+          </p>
+        </div>
+        <div class="session-requirements">
+          <h3>Requirements</h3>
+          <p>
+          {{session.requirements}}
+          </p>
+        </div>
+       
+      </div>
+      <div class="session-details">
+        <p>
+          <span><i class="bi bi-hourglass-bottom"></i> Duration:</span> {{session.duration}} min
+        </p>
+        <p>
+          <span><i class="bi bi-calendar-day"></i> Date:</span> {{dateShow(session.date!)}}
+        </p>
+      </div>
+      <button class="reserve-button"  *ngIf="!reservation.reserved" (click)="createReservation()" >Reserve Now</button>
+    </div>
+  </section>
+  <div class="carde">
+    <div class="img">
+      <img src="https://cdn.freebiesupply.com/logos/large/2x/expert-logo-png-transparent.png" />
+    </div>
+    <div class="infos">
+      
+      <div class="contact">
+        <ul>
+          <li><div class="Name">
+            <h2> {{expert.name}}</h2>
+            <h4>{{expert.email}}</h4>
+            <p>{{expert.bio}}</p>
+          </div> </li>
+          <li  ><div class="Name">
+            <h4 *ngIf="noEmptyPhone(expert.phoneNumber)"> <span><i class="bi bi-telephone-fill"></i> Phone:</span> {{expert.phoneNumber}}</h4>
+            <h4 *ngIf="noEmptyFb(expert.facebookProfile)"> <span><i class="bi bi-facebook"></i> Facebook :</span> {{expert.facebookProfile}}</h4>
+            <h4 *ngIf="noEmptyLink(expert.linkedinProfile)"> <span><i class="bi bi-linkedin"></i> Linkedin:</span> {{expert.linkedinProfile}}</h4>
+          </div> </li>
+     
+        </ul>
+      </div>
+   
+    </div>
+  </div>
+  
+  
+
+  <div class="block">
+    <div class="block-header">
+      <div class="title">
+        <h2>Comments</h2>
+        <div class="tag">{{ commentsData.length }}</div>
+      </div>
+      <div class="group-radio">
+        <span class="button-radio">
+          <input id="latest" name="latest" type="radio" checked />
+          <label for="latest">Latest</label>
+        </span>
+        <div class="divider"></div>
+        <span class="button-radio">
+          <input id="popular" name="latest" type="radio" />
+          <label for="popular">Popular</label>
+        </span>
+      </div>
+    </div>
+    <div class="writing">
+      <input contenteditable="true" class="textarea" spellcheck="false"     [(ngModel)]="commentaire.commentData"/>
+      <div class="footer">
+        <div class="text-format">
+          <button class="btn"><i class="ri-bold"></i></button>
+          <button class="btn"><i class="ri-italic"></i></button>
+          <button class="btn"><i class="ri-underline"></i></button>
+          <button class="btn"><i class="ri-list-unordered"></i></button>
+        </div>
+        <div class="group-button">
+          <button class="btn"><i class="ri-at-line"></i></button>
+          <button class="btn primary" (click)="createComment()">Send</button>
+        </div>
+      </div>
+    </div>
+
+    <div *ngFor="let commentData of commentsData ; let i = index" class="comment">
+      <div class="user-banner">
+        <div class="user">
+          <div
+            class="avatar"
+            style="
+              background-color: #fff5e9;
+              border-color: #ffe0bd;
+              color: #f98600;
+            "
+          >
+            {{ extractInitials(this.commentsData[i].name) }}
+            <span class="stat green"></span>
+          </div>
+          <h5>{{ this.commentsData[i].name }}</h5>
+        </div>
+        <button class="btn dropdown"><i class="ri-more-line"></i></button>
+      </div>
+      <div class="content">
+        <p>{{ this.commentsData[i].item.commentData }}</p>
+      </div>
+      <div class="footer">
+        <button class="btn"><i class="ri-emotion-line"></i></button>
+
+        <div class="divider"></div>
+        <a href="#">Reply</a>
+        <div class="divider"></div>
+        <span class="is-mute">6 hour</span>
+      </div>
+    </div>
+
+    <div class="load" *ngIf="remainingComments.length > 0">
+      <span><a (click)="loadMoreComments()">Load More</a></span>
+    </div>
+  </div>
+</div>
+
+<section class="light">
+  <div class="container1">
+    <h2>Similar Sessions:</h2>
+    <div class="cars">
+      <div *ngFor="let session of similarSessions" class="car">
+        <div class="img-wrapper">
+          <a href="#">Learn more</a>
+          <img
+            class="cardImage"
+            src="{{ session.image }}"
+            alt="Chevrolet Camaro"
+          />
+        </div>
+        <div class="sessionTitle">
+          <p>{{ session.title }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="text-center text-white" style="background-color: #f1f1f1">
+  <!-- Copyright -->
+  <div
+    class="text-center text-dark p-3"
+    style="background-color: rgba(0, 0, 0, 0.2)"
+  >
+    © 2023 Copyright:
+    <a class="text-dark" href="https://mdbootstrap.com/">MDBootstrap.com</a>
+  </div>
+  <!-- Copyright -->
+</footer>

@@ -1,0 +1,132 @@
+<div class="all">
+    <!-- Navbar -->
+    <nav class="fixed-top">
+      <nav class="navbar bg-body-tertiary firstNavbar">
+        <div class="container-fluid d-flex justify-content-between">
+          <a class="navbar-brand mt-2 mt-lg-0" href="#">
+            <img
+              src="https://mdbcdn.b-cdn.net/img/logo/mdb-transaprent-noshadows.webp"
+              height="25"
+              style="color: transparent;"
+              alt="MDB Logo"
+              loading="lazy"
+            />
+          </a>
+          <div ngbDropdown class="dropdown" style="color: black">
+            <a
+              class="dropdown-toggle d-flex align-items-center hidden-arrow"
+              id="navbarDropdownMenuAvatar"
+              role="button"
+              ngbDropdownToggle
+              style="color: black; text-decoration: none"
+            >
+            <div
+            class="avatar"
+            style="
+              background-color: #cbcdd7;
+              border-color: #dee8f7;
+              color: #161c45;
+            "
+          >
+         {{ extractInitials(expert.name) }} 
+            <span class="stat green"></span>
+          </div>
+            </a>
+            <ul
+              class="dropdown-menu dropdown-menu-end"
+              aria-labelledby="navbarDropdownMenuAvatar"
+              ngbDropdownMenu
+            >
+              <li>
+                <a class="dropdown-item" href="/expertPage">My profile</a>
+              </li>
+  
+              <li>
+                <a class="dropdown-item" href="/login" (click)="ExpertLogout()">Logout</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <nav class="navbar navbar-expand-lg navbar-light bg-light secondNavbar">
+        <div class="container-fluid">
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarTogglerDemo01"
+            aria-controls="navbarTogglerDemo01"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+             
+              <li class="nav-item ">
+                <a class="nav-link home" href="/expertSessions"
+                  ><span><i class="bi bi-menu-up"></i></span>Sessions</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/expertPage"
+                  ><span><i class="bi bi-person"></i></span>Profile</a
+                >
+              </li>
+            </ul>
+          
+          </div>
+        </div>
+      </nav>
+    </nav>
+    
+<div class="container-fluid">
+    <div class="row">
+      <main role="main" class="col-md-9 ml-sm-auto col-lg-10 my-3">
+        <h4 class="caption">Candidates Who Have Reserved Your Session:</h4>
+        <table class="projects-table">
+          <thead>
+            <tr>
+                <th>Name</th>
+                <th>Email address</th>
+                <th>Status</th>
+                <th class="text-right">Accept</th>
+                <th class="text-right">Refuse</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let project of users; let i = index">
+              <td>
+                <p>{{ project.name }}</p>
+                <p>{{ project.bio }}</p>
+              </td>
+             
+              <td>
+                <p>{{ project.email}}</p>
+                <p>Profile</p>
+              </td>
+             
+            
+              <td class="status">
+                <span *ngIf="project.status == 'Refused'"  class="status-text status-red">{{project.status}}</span>
+                <span *ngIf="project.status == 'Accepted'"  class="status-text status-green">{{project.status}}</span>
+                <span *ngIf="project.status == 'In Progress'"  class="status-text status-orange">{{project.status}}</span>
+
+               
+              </td>
+              <td>
+                <a (click)="onAcceptReservation(idSession, project.email)"style="pointer-events: visible;"> <i class="bi bi-check-circle-fill" style="color: green;margin-left: 20px;"></i></a>
+                
+              </td>
+              <td>
+                <a (click)="onRefuseReservation(idSession, project.email)" style="pointer-events: visible;"><i class="bi bi-x-circle-fill" style="color: rgb(154, 0, 0);margin-left: 20px;"></i></a>
+                
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </main>
+    </div>
+  </div>
+  

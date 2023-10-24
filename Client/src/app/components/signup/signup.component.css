@@ -1,0 +1,281 @@
+
+.fr {
+  display: block;
+  float: right;
+}
+
+.outer {
+  height: 100vh;
+  background: linear-gradient(to top, #e6eff8 50%, #F2F3F4 90%) no-repeat;
+  display: flex;
+  justify-content: center; /* Centrer le formulaire horizontalement */
+  align-items: center; /* Centrer le formulaire verticalement */
+}
+
+.panel {
+  min-height: 380px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  border-radius: 12px;
+  margin-top: 30px; /* Ajuster la marge supérieure pour déplacer le formulaire vers le haut */
+  padding: 20px; /* Ajouter un peu d'espace intérieur pour le formulaire */
+}
+a {
+color:#286d9b;
+font-weight: 500;
+text-decoration: underline;
+}
+.bg-white {
+--bs-bg-opacity: 1;
+background-color: #3A6884;
+background-color: #fff !important;
+
+}
+button, input, optgroup, select, textarea {
+margin: 0;
+font-family: inherit;
+font-size: inherit;
+background-color: #fff;
+line-height: inherit;
+}
+
+.panel-heading {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+#forgot {
+  min-width: 100px;
+  margin-left: auto;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+.form-inline label {
+  padding-left: 10px;
+  margin: 0;
+  cursor: pointer;
+
+}
+
+.btn {
+  margin-top: 20px;
+ 
+  border-radius: 15px;
+}
+
+
+
+.input-fieldd {
+  border-radius: 5px;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  border: 1px solid #ddd;
+  color: #3A6884;
+}
+
+.input-fieldd1 {
+  border-radius: 5px;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  border: 1px solid #ddd;
+  color: #3A6884;
+  width: 150%;
+  margin-right: 10%;
+}
+
+.input-fieldd2 {
+  border-radius: 5px;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  border: 1px solid #ddd;
+  color: #3A6884;
+  width: 150%;
+  margin-left: 62%;
+}
+
+.p {
+  display: flex;
+}
+
+.input-fieldd3 {
+  border-radius: 5px;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  border: 1px solid #ddd;
+  color: #3A6884;
+  width: 150%;
+  margin-right: 10%;
+}
+
+.input-fieldd4 {
+  border-radius: 5px;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  border: 1px solid #ddd;
+  color: #3A6884;
+  width: 150%;
+  margin-left: 62%;
+}
+
+.input-fieldd.error {
+  border: 1px solid red;
+  color: red;
+}
+
+input[type='text'],
+input[type='password'] {
+  border: none;
+  outline: none;
+  box-shadow: none;
+  width: 100%;
+}
+
+.fa-eye-slash.btn {
+  border: none;
+  outline: none;
+  box-shadow: none;
+}
+
+img {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  border-radius: 50%;
+  position: relative;
+}
+
+.bordert {
+  border-top: 1px solid #aaa;
+  position: relative;
+}
+.title{
+  color: #213c4f;
+  font-weight: bold
+  ;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.bordert:after {
+  content: "or connect with";
+  position: absolute;
+  top: -13px;
+  left: 33%;
+  background-color: #fff;
+  padding: 0px 8px;
+}
+
+@media (max-width: 768px) {
+  .input-field1,
+  .input-field2,
+  .input-field3,
+  .input-field4 {
+    width: 100%;
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 360px) {
+  #forgot {
+    margin-left: 0;
+    padding-top: 10px;
+  }
+  body {
+    height: 100%;
+  }
+  .container {
+    margin: 30px 0;
+  }
+  .bordert:after {
+    left: 25%;
+  }
+}
+
+/* Ajout de styles pour le bouton d'icône eye */
+.bg-white {
+  background: none;
+  border: none;
+}
+
+/* Ajout de styles pour ngtoast */
+.toast-right-top {
+  height: auto !important;
+}
+
+.form {
+  width: 150%;
+  margin-left: -30%;
+}
+
+@media screen and (max-width: 1208px) {
+  .form{
+      width: 140%;
+  }
+  .input-field1,
+  .input-field2,
+  .input-field3,
+  .input-field4 {
+    width: 100%;
+    margin-left: 0;
+    margin-right: 50px;
+
+  }
+}
+
+@media (max-width: 768px) {
+  .offset-md-2 {
+      offset-md-2: 0;
+  }
+  .col-lg-5,
+  .col-md-7 {
+      width: 100%;
+  }
+  .offset-lg-4,
+  .offset-md-3 {
+      margin-left: 0;
+  }
+  .form {
+      width: 100%;
+      margin-left: 0;
+  }
+  .input-field1,
+  .input-field2,
+  .input-field3,
+  .input-field4 {
+      width: 100%;
+      margin-left: 0;
+  }
+}
+
+@media (max-width: 360px) {
+  #forgot {
+      margin-left: 0;
+      padding-top: 10px;
+  }
+  body {
+      height: 100%;
+  }
+  .container {
+      margin: 30px 0;
+  }
+  .bordert:after {
+      left: 25%;
+  }
+}
+.btn{
+  border-color:  #3A6884 !important;
+  background-color: #3A6884 !important;
+  }
